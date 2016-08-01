@@ -1,5 +1,5 @@
 function Game(){
-  this.colorArray = [randomInt()];
+  this.colorArray = [randomInt(), 0];
 }
 
 function randomInt() {
@@ -20,10 +20,9 @@ function arraysEqual(a, b) {
 Game.prototype.processTurn = function(colorInputs) {
  if (arraysEqual(colorInputs, this.colorArray)) {
    this.colorArray.push(randomInt());
+   this.colorArray.push(0);
    return true;
  } else {
-   console.log(colorInputs);
-   console.log(this.colorArray);
    return false;
  }
 };
